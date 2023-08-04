@@ -9,7 +9,7 @@ arch:
   - amd64
   - i386
 ports:
-  7000/tcp :7000
+  7000/tcp: 7000
 data_location: /config/addons_config/databag
 environment:
-  - "ADMIN": null
+  "ADMIN": null
