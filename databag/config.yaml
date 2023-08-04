@@ -11,4 +11,4 @@ data_location: /config/addons_config/databag
 options:
   "ADMIN": Admin
 shema:
-  "ADMIN": password?
+  "ADMIN": password
