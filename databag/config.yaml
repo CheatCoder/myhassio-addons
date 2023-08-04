@@ -6,8 +6,8 @@ arch:
   - armv7
   - amd64
 map:
-  - "config": "rw"
-  - "share": "rw"
+  - config:rw
+  - share:rw
 ports:
   7000/tcp: 7000
 data_location: /config/addons_config/databag
