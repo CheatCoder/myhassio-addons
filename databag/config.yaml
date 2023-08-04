@@ -10,8 +10,7 @@ map:
   - share:rw
 ports:
   7000/tcp: 7000
-data_location: /config/addons_config/databag
 options:
-  "ADMIN": Admin
+  "ADMIN": changeme
 schema:
   "ADMIN": password
