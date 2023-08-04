@@ -1,3 +1,4 @@
+#!/bin/bash
 rm -rf /var/lib/databag
 ln -s /data/databag/data /var/lib/databag
 
