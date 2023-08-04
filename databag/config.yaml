@@ -9,5 +9,6 @@ ports:
   7000/tcp: 7000
 data_location: /config/addons_config/databag
 options:
-  "Admin": Admin
-  
+  "ADMIN": Admin
+shema:
+  "ADMIN": password?
