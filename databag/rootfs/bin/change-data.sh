@@ -5,4 +5,4 @@ rm -rf /var/lib/databag
 ln -s /data/databag/data /var/lib/databag
 
 echo start app
-bash /app/entrypoint.sh
+/bin/bash /app/entrypoint.sh
