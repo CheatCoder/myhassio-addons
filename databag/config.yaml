@@ -1,5 +1,4 @@
 version: "0.1.6"
-image: balzack/databag
 name: Databag
 slug: databag
 description: Databag is a selfhosted messaging service.
@@ -9,5 +8,6 @@ arch:
 ports:
   7000/tcp: 7000
 data_location: /config/addons_config/databag
-environment:
-  "ADMIN": str?
+options:
+  "Admin": null
+  
