@@ -1,7 +1,7 @@
 FROM  balzack/databag:latest
 
-COPY rootfs /
+ADD rootfs/bin/change-data.sh /
 
-RUN chmod +x /bin/change-data.sh
+RUN chmod +x change-data.sh
 
-ENTRYPOINT ["/bin/change-data.sh"]
+ENTRYPOINT ["change-data.sh"]
