@@ -5,5 +5,5 @@ ports:
 data_location: /config/addons_config/databag
 map:
   - config: rw
-enviroment:
+environment:
   - "ADMIN": null
