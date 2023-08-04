@@ -1,9 +1,16 @@
 version: "0.0.1"
-image: balzack/databag:latest
+name: Databag
+slug: databag-1
+description: <-
+Databag is a selfhosted messaging service.
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
 ports:
   7000/tcp :7000
 data_location: /config/addons_config/databag
-map:
-  - config: rw
 environment:
   - "ADMIN": null
