@@ -1,0 +1,2 @@
+FROM  balzack/databag:latest
+

@@ -1,0 +1,9 @@
+version: "3.9"
+image: balzack/databag:latest
+ports:
+  7000/tcp :7000
+data_location: /config/addons_config/databag
+map:
+  - config: rw
+enviroment:
+  - "ADMIN":""
