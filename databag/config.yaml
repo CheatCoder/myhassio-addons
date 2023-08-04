@@ -1,4 +1,4 @@
-version: "latest"
+version: "0.1.6"
 image: balzack/databag
 name: Databag
 slug: databag
