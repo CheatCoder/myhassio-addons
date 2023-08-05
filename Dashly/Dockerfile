@@ -38,8 +38,6 @@ FROM node:16.13.2-alpine AS BUILD_IMAGE
  # Copy over all project files and folders to the working directory  
  #COPY . .  
  
- 
-  
  # Build initial app for production  
  RUN yarn build  
   
@@ -47,7 +45,13 @@ FROM node:16.13.2-alpine AS BUILD_IMAGE
  EXPOSE ${PORT}  
   
  # Finally, run start command to serve up the built application  
- CMD ["yarn", "build-and-start"]  
+ # CMD ["yarn", "build-and-start"]  
   
+ADD rootfs/bin/entrypoint.sh /data/dashy/
+
+RUN chmod +x /data/dashy/entrypoint.sh
+
+ENTRYPOINT ["/data/dashy/entrypoint.sh"]
+
  # Run simple healthchecks every 5 mins, to check the Dashy's everythings great  
  HEALTHCHECK --interval=5m --timeout=2s --start-period=30s CMD yarn health-check 
