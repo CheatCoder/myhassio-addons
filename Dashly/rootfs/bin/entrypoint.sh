@@ -1,12 +1,12 @@
 #!/bin/sh
 
-FILE=/data/config.yml
+FILE=/data/conf.yml
 if test -f "$FILE"; then
     echo "$FILE exists."
-    ln -s /data/config.yml /app/dashly/public/config.yml
+    ln -s /data/conf.yml /app/dashly/public/conf.yml
 else
-    cp /config.yml /data
-    ln -s /data/config.yml /app/dashly/public/config.yml
+    cp /conf.yml /data
+    ln -s /data/conf.yml /app/dashly/public/conf.yml
 fi
 
 cd /app/dashly
