@@ -13,7 +13,7 @@ FROM node:16.13.2-alpine AS BUILD_IMAGE
   
   
  # Install Node and Yarn  
- RUN apk add --update --no-cache nodejs npm yarn  git
+ RUN apk add --update --no-cache git
   
  # Define some ENV Vars  
  ENV PORT=4000 \  
