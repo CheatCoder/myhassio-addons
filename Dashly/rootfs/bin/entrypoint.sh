@@ -2,13 +2,15 @@
 
 rm /app/dashly/public/conf.yml
 
-FILE=/data/conf.yml
+mkdir -p /config/addons_config/dashly
+FILE=/config/addons_config/dashly/conf.yml
+
 if test -f "$FILE"; then
     echo "$FILE exists."
-    ln -s /data/conf.yml /app/dashly/public/conf.yml
+    ln -s $FILE /app/dashly/public/conf.yml
 else
-    cp /conf.yml /data
-    ln -s /data/conf.yml /app/dashly/public/conf.yml
+    cp /conf.yml $FILE
+    ln -s $FILE /app/dashly/public/conf.yml
 fi
 
 cd /app/dashly
