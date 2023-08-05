@@ -1,7 +1,7 @@
 Databag is a selfhosted messaging service.
 
 
-## Instalation
+## Installation
 
 Install the repo and then the Plugin
 
