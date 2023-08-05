@@ -30,16 +30,20 @@ FROM alpine:3.12 AS builder
  # Copy over all project files and folders to the working directory  
  #COPY . .  
  
- RUN git clone https://github.com/Lissy93/dashy.git .
+ RUN git clone https://github.com/Lissy93/dashy.git
+ 
+ ENV DIRECTORY=/data/dashy
+ 
+ WORKDIR ${DIRECTORY}
   
  # Build initial app for production  
- RUN yarn build  
+ RUN cd dashly && yarn build  
   
  # Expose given port  
  EXPOSE ${PORT}  
   
  # Finally, run start command to serve up the built application  
- CMD [ "yarn", "build-and-start"]  
+ CMD ["cd dashly", "yarn", "build-and-start"]  
   
  # Run simple healthchecks every 5 mins, to check the Dashy's everythings great  
  HEALTHCHECK --interval=5m --timeout=2s --start-period=30s CMD yarn health-check 
