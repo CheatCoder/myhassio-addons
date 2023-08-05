@@ -30,7 +30,7 @@ FROM alpine:3.12 AS builder
  # Copy over all project files and folders to the working directory  
  #COPY . .  
  
- RUN git clone https://github.com/Lissy93/dashy .
+ RUN git clone https://github.com/Lissy93/dashy.git .
   
  # Build initial app for production  
  RUN yarn build  
