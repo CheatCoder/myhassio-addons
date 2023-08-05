@@ -1,7 +1,7 @@
 version: "2.1.1"
 name: Dashly
 slug: dashly
-description: Databag is a selfhosted messaging service.
+description: Dashy helps you organize your self-hosted services by making them accessible from a single place
 arch:
   - armv7
   - amd64
