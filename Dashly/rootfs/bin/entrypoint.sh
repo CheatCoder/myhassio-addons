@@ -1,5 +1,7 @@
 #!/bin/sh
 
+rm /app/dashly/public/conf.yml
+
 FILE=/data/conf.yml
 if test -f "$FILE"; then
     echo "$FILE exists."
