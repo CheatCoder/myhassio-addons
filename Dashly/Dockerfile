@@ -32,7 +32,7 @@ FROM node:16.13.2-alpine AS BUILD_IMAGE
  
  WORKDIR ${DIRECTORY}
   
- RUN mv /app/dashys/public/config.yml /
+ RUN mv /app/dashy/public/config.yml /
 
  # Install project dependencies  
  RUN yarn  
