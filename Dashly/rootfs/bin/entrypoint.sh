@@ -13,4 +13,4 @@ fi
 
 cd /app/dashly
 
-yarn build-and-start
+yarn start
