@@ -5,5 +5,7 @@ description: Dashy helps you organize your self-hosted services by making them a
 arch:
   - armv7
   - amd64
+maps:
+  - config: rw
 ports:
   4000/tcp: 4000

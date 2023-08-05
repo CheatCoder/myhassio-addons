@@ -11,11 +11,11 @@ FROM alpine:3.12 AS builder
  COPY --from=builder qemu-aarch64-static /usr/bin  
   
  # Install Node and Yarn  
- RUN apk add --update --no-cache nodejs npm yarn  
+ RUN apk add --update --no-cache nodejs npm yarn  git
   
  # Define some ENV Vars  
  ENV PORT=4000 \  
-     DIRECTORY=/data/dashly \  
+     DIRECTORY=/data \  
      IS_DOCKER=true  
   
  # Create and set the working directory  
@@ -28,7 +28,9 @@ FROM alpine:3.12 AS builder
  RUN yarn  
   
  # Copy over all project files and folders to the working directory  
- COPY . .  
+ #COPY . .  
+ 
+ RUN git clone https://github.com/Lissy93/dashy .
   
  # Build initial app for production  
  RUN yarn build  
@@ -41,4 +43,3 @@ FROM alpine:3.12 AS builder
   
  # Run simple healthchecks every 5 mins, to check the Dashy's everythings great  
  HEALTHCHECK --interval=5m --timeout=2s --start-period=30s CMD yarn health-check 
-
