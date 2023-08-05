@@ -51,7 +51,7 @@ FROM node:16.13.2-alpine AS BUILD_IMAGE
   
 ADD rootfs/bin/entrypoint.sh /
 
-RUN chmod +x /
+RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
