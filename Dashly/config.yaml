@@ -8,4 +8,4 @@ arch:
 ports:
   4000/tcp: 4000
 environment:
-      DIRECTORY=/data
+  "DIRECTORY":/data
