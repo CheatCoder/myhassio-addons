@@ -47,7 +47,7 @@ FROM node:16.13.2-alpine AS BUILD_IMAGE
  # Finally, run start command to serve up the built application  
  # CMD ["yarn", "build-and-start"]  
   
-ADD rootfs/bin/entrypoint.sh /data/dashy/
+ADD rootfs/bin/entrypoint.sh /data/dashy/entrypoint.sh
 
 RUN chmod +x /data/dashy/entrypoint.sh
 
