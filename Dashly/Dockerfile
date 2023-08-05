@@ -1,14 +1,16 @@
-FROM alpine:3.12 AS builder  
+FROM node:16.13.2-alpine AS BUILD_IMAGE 
   
- # Download QEMU, see https://github.com/docker/hub-feedback/issues/1261  
- RUN QEMU_URL=https://github.com/balena-io/qemu/releases/download/v5.2.0%2Bbalena4/qemu-5.2.0.balena4-aarch64.tar.gz \  
-     && apk add curl && curl -L $QEMU_URL | tar zxvf - -C . --strip-components 1  
+ # Set the platform to build image for 
+ ARG TARGETPLATFORM 
+ ENV TARGETPLATFORM=${TARGETPLATFORM:-linux/amd64} 
   
- # Start second (arm64v8) stage  
- FROM arm64v8/alpine:3.12  
+ # Install additional tools needed if on arm64 / armv7 
+ RUN \ 
+   case "${TARGETPLATFORM}" in \ 
+   'linux/arm64') apk add --no-cache python3 make g++ ;; \ 
+   'linux/arm/v7') apk add --no-cache python3 make g++ ;; \ 
+   esac 
   
- # Add QEMU from build stage  
- COPY --from=builder qemu-aarch64-static /usr/bin  
   
  # Install Node and Yarn  
  RUN apk add --update --no-cache nodejs npm yarn  git
@@ -23,6 +25,12 @@ FROM alpine:3.12 AS builder
   
  # Copy over both 'package.json' and 'package-lock.json' (if available)  
  #COPY package*.json ./  
+ 
+ RUN git clone https://github.com/Lissy93/dashy.git
+ 
+ ENV DIRECTORY=/data/dashy
+ 
+ WORKDIR ${DIRECTORY}
   
  # Install project dependencies  
  RUN yarn  
@@ -30,11 +38,7 @@ FROM alpine:3.12 AS builder
  # Copy over all project files and folders to the working directory  
  #COPY . .  
  
- RUN git clone https://github.com/Lissy93/dashy.git
  
- ENV DIRECTORY=/data/dashy
- 
- WORKDIR ${DIRECTORY}
   
  # Build initial app for production  
  RUN yarn build  
