@@ -17,7 +17,7 @@ FROM node:16.13.2-alpine AS BUILD_IMAGE
   
  # Define some ENV Vars  
  ENV PORT=4000 \  
-     DIRECTORY=/data \  
+     DIRECTORY=/app \  
      IS_DOCKER=true  
   
  # Create and set the working directory  
@@ -28,10 +28,12 @@ FROM node:16.13.2-alpine AS BUILD_IMAGE
  
  RUN git clone https://github.com/Lissy93/dashy.git
  
- ENV DIRECTORY=/data/dashy
+ ENV DIRECTORY=/app/dashy
  
  WORKDIR ${DIRECTORY}
   
+ RUN mv /app/data/public/config.yml /
+
  # Install project dependencies  
  RUN yarn  
   
@@ -47,11 +49,11 @@ FROM node:16.13.2-alpine AS BUILD_IMAGE
  # Finally, run start command to serve up the built application  
  # CMD ["yarn", "build-and-start"]  
   
-ADD rootfs/bin/entrypoint.sh /data/dashy/entrypoint.sh
+ADD rootfs/bin/entrypoint.sh /
 
-RUN chmod +x /data/dashy/entrypoint.sh
+RUN chmod +x /
 
-ENTRYPOINT ["/data/dashy/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 
  # Run simple healthchecks every 5 mins, to check the Dashy's everythings great  
  #HEALTHCHECK --interval=5m --timeout=2s --start-period=30s CMD yarn health-check 
