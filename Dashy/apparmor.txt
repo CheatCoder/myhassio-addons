@@ -1,6 +1,6 @@
 #include <tunables/global> 
   
-profile dashly flags=(attach_disconnected,mediate_deleted) { 
+profile dashy flags=(attach_disconnected,mediate_deleted) { 
    #include <abstractions/base> 
   
    capability, 

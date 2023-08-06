@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 rm /app/dashy/public/conf.yml
 
