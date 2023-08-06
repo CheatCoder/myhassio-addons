@@ -3,6 +3,8 @@
 rm /app/dashy/public/conf.yml
 
 mkdir -p /config/addons_config/dashy
+
+
 FILE=/config/addons_config/dashy/conf.yml
 
 if test -f "$FILE"; then
