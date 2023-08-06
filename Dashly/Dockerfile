@@ -56,4 +56,4 @@ RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
  # Run simple healthchecks every 5 mins, to check the Dashy's everythings great  
- HEALTHCHECK --interval=5m --timeout=2s --start-period=30s CMD yarn health-check 
+# HEALTHCHECK --interval=5m --timeout=2s --start-period=30s CMD yarn health-check 
