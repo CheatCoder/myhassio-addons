@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#rm /app/dashly/public/conf.yml
+rm /app/dashy/public/conf.yml
 
 mkdir -p /config/addons_config/dashy
 FILE=/config/addons_config/dashy/conf.yml
