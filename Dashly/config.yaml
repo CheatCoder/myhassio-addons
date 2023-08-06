@@ -6,6 +6,6 @@ arch:
   - armv7
   - amd64
 maps:
-  - config: rw
+  - config:rw
 ports:
   4000/tcp: 4000
