@@ -1,7 +1,9 @@
-version: "2.1.1"
+version: "7.2.0"
 name: Zulip
 slug: zulip
-description: 
+description: Zulip combines the immediacy of real-time chat with an email threading model. With Zulip, you can catch up on important conversations while ignoring irrelevant ones.
+arch:
+  - amd64
 options:
   SETTING_EXTERNAL_HOST: "zulip.example.de"
   SETTING_ZULIP_ADMINISTRATOR: "admin@example.com"
