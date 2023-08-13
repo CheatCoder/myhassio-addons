@@ -1,0 +1,10 @@
+version: "2.1.1"
+name: Zulip
+slug: zulip
+description: 
+options:
+  SETTING_EXTERNAL_HOST: "zulip.example.de"
+  SETTING_ZULIP_ADMINISTRATOR: "admin@example.com"
+scheme:
+  SETTING_EXTERNAL_HOST: "str"
+  SETTING_ZULIP_ADMINISTRATOR: "email"
