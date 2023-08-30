@@ -1,0 +1,9 @@
+version: "1.4.8"
+name: neonlink
+slug: neonlink
+description: NeonLink is a simple and open-source self-hosted bookmark service. It is lightweight, uses minimal dependencies, and is easy to install via Docker. Due to the low system requirements, this application is ideal for deployment on the RaspberryPI.
+arch:
+  - armv7
+  - amd64
+ports:
+  3333/tcp: 3333
