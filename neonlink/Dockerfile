@@ -7,3 +7,8 @@ LABEL \
 WORKDIR /app/client
 
 RUN npm install --platform=linuxmusl sharp
+
+WORKDIR /app/server
+
+RUN npm install --platform=linuxmusl sharp
+
