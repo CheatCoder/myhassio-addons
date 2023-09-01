@@ -6,12 +6,12 @@ LABEL \
 
 WORKDIR /app/client
 
-RUN npm install --arch=arm64 --platform=linuxmusl sharp
+RUN npm install --platform=linuxmusl sharp
 
 RUN npm run build
 
 WORKDIR /app/server
 
-RUN npm install --arch=arm64 --platform=linuxmusl sharp
+RUN npm install --platform=linuxmusl sharp
 
 RUN npm run build
