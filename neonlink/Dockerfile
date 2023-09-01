@@ -4,7 +4,7 @@ LABEL \
   io.hass.type="addon" \
   io.hass.arch="armhf|aarch64|i386|amd64"
 
-cd /app
+WORKDIR /app
 
 RUN npm install --arch=arm64 --platform=linuxmusl sharp
 
