@@ -2,18 +2,14 @@
 
 #/var/www/storage/app/public/thumbnails
 rm -rf /var/www/storage/app/public/thumbnails
-mkdir -p /data/thumbnails
-ln -s /data/thumbnails /var/www/storage/app/public/thumbnails
+mkdir -p /share/benotes/thumbnails 2>/dev/null
+ln -s /share/benotes/thumbnails /var/www/storage/app/public/thumbnails
 
 #/var/www/storage
 rm -rf /var/www/storage
-mkdir -p /data/storage
-ln -s /data/storage /var/www/storage
+mkdir -p /share/benotes/storage 2>/dev/null
+ln -s /share/benotes/storage /var/www/storage
 
-#/var/www/logs
-rm -rf /var/www/logs
-mkdir -p /data/logs
-ln -s /data/logs /var/www/logs
 
 
 
