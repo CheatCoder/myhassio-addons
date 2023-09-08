@@ -1,7 +1,7 @@
 version: "2.8.0"
-name: Benote
-slug: Benote
-description: Benotes: Notes & Bookmarks - Save all your information in one place.
+name: Benotes
+slug: benotes
+description: "Notes & Bookmarks - Save all your information in one place"
 arch:
   - armv7
   - amd64
@@ -14,7 +14,7 @@ options:
   "APP_NAME": "Benotes"
   "APP_ENV": "production"
   "APP_DEBUG": "false"
-  "APP_URL": "http://localhost:${APP_PORT}"
+  "APP_URL": "http://localhost"
   "APP_TIMEZONE": "UTC"
 
   "APP_KEY": ""
