@@ -10,4 +10,11 @@ rm -rf /var/www/storage
 mkdir -p /data/storage
 ln -s /data/storage /var/www/storage
 
+#/var/www/logs
+rm -rf /var/www/logs
+mkdir -p /data/logs
+ln -s /data/logs /var/www/logs
+
+
+
 /bin/sh /entrypoint.sh
