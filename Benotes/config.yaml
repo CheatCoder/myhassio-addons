@@ -1,0 +1,53 @@
+version: "2.8.0"
+name: Benote
+slug: Benote
+description: Benotes: Notes & Bookmarks - Save all your information in one place.
+arch:
+  - armv7
+  - amd64
+map:
+  - config:rw
+  - share:rw
+ports:
+  8000/tcp: 8000
+options:
+  "APP_NAME": "Benotes"
+  "APP_ENV": "production"
+  "APP_DEBUG": "false"
+  "APP_URL": "http://localhost:${APP_PORT}"
+  "APP_TIMEZONE": "UTC"
+
+  "APP_KEY": ""
+  "JWT_SECRET": ""
+
+  "GENERATE_MISSING_THUMBNAILS": "true"
+  "USE_FILESYSTEM": "true"
+
+  "MAIL_DRIVER": "smtp"
+  "MAIL_PORT": "587"
+  "MAIL_USERNAME": "benotes@example.com"
+  "MAIL_PASSWORD": "exampletochange"
+  "MAIL_ENCRYPTION": "tls"
+  "MAIL_HOST": "smtp.example.com"
+  "MAIL_FROM_ADDRESS": "noreplay@example.com"
+  "MAIL_FROM_NAME": "Benotes"
+schema:
+  "App_NAME": "str?"
+  "APP_ENV": "str?"
+  "APP_DEBUG": "bool"
+  "APP_URL": "str"
+  "APP_TIMEZONE": "str"
+  "APP_KEY": "password?"
+  "JWT_SECRET": "password?"
+  "GENERATE_MISSING_THUMBNAILS": "bool"
+  "USE_FILESYSTEM": "bool"
+  "CACHE_DRIVER": "str"
+
+  "MAIL_DRIVER": "str?"
+  "MAIL_PORT": "int?"
+  "MAIL_USERNAME": "str?"
+  "MAIL_PASSWORD": "password?"
+  "MAIL_ENCRYPTION": "str?"
+  "MAIL_HOST": "str?"
+  "MAIL_FROM_ADDRESS": "str?"
+  "MAIL_FROM_NAME": "str?"
