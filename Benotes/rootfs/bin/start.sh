@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/sh
 
 #/var/www/storage/app/public/thumbnails
 rm -rf /var/www/storage/app/public/thumbnails
