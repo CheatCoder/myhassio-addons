@@ -1,0 +1,11 @@
+version: "1.2.0"
+name: Obsidan-Sync-and-Share
+slug: obsidian-sync-share
+description: Obsidian-Sync-and-Share server
+arch:
+  - amd64
+map:
+  - config:rw
+  - share:rw
+ports:
+  80/tcp: 4002
